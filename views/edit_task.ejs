@@ -1,0 +1,76 @@
+<%- include("partials/header") %>
+
+<style>
+  .form-container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #f8f9fa;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-container h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .form-container p {
+    color: #6c757d;
+    margin-bottom: 25px;
+  }
+
+  .form-control {
+    border-radius: 25px;
+    padding: 12px 20px;
+  }
+
+  .btn-submit {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    border-radius: 25px;
+    padding: 12px;
+    font-weight: bold;
+    border: none;
+  }
+
+  .btn-submit:hover {
+    background-color: #333;
+  }
+</style>
+
+<div class="container">
+  <div class="form-container">
+    <h2 class="text-center">Edit Task</h2>
+    <p class="text-center">Update task details below</p>
+
+    <form action="/task/edit/<%= task.id %>" method="POST">
+      <div class="mb-3">
+        <label for="name" class="form-label">Employee Name</label>
+        <input type="text" id="name" name="name" class="form-control" value="<%= task.name %>" placeholder="e.g. John Doe" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="priority" class="form-label">Priority</label>
+        <select id="priority" name="priority" class="form-control" required>
+          <option value="High" <%= task.priority === 'High' ? 'selected' : '' %>>High</option>
+          <option value="Medium" <%= task.priority === 'Medium' ? 'selected' : '' %>>Medium</option>
+          <option value="Low" <%= task.priority === 'Low' ? 'selected' : '' %>>Low</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea id="description" name="description" class="form-control" placeholder="e.g. Prepare presentation for client" required><%= task.description %></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label for="deadline" class="form-label">Deadline</label>
+        <input type="date" id="deadline" name="deadline" class="form-control" value="<%= task.deadline %>" required>
+      </div>
+
+      <button type="submit" class="btn btn-submit">Update Task</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<%- include("partials/header") %>
+
+<div class="container my-5">
+  <div class="card shadow-lg p-4 rounded-4 bg-white">
+    <h3 class="text-center mb-4 text-black fw-bold">Employee List</h3>
+
+    <% if (employees.length === 0) { %>
+      <p class="text-center text-muted">No employees added yet.</p>
+    <% } else { %>
+      <div class="table-responsive">
+        <table class="table table-hover table-striped align-middle text-center">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Department</th>
+              <th scope="col">Salary (₹)</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% employees.forEach(emp => { %>
+              <tr>
+                <td><%= emp.name %></td>
+                <td><%= emp.department %></td>
+                <td><%= emp.salary %></td>
+                <td>
+                  <a href="/edit/<%= emp.id %>" class="btn btn-sm btn-outline-warning me-1">
+                    <i class="bi bi-pencil-square"></i> Edit
+                  </a>
+                  <a href="/delete/<%= emp.id %>" class="btn btn-sm btn-outline-danger me-1">
+                    <i class="bi bi-trash"></i> Delete
+                  </a>
+                  <a href="/task/<%= emp.id %>" class="btn btn-sm btn-outline-success">
+                    <i class="bi bi-list-task"></i> Task
+                  </a>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+</div>

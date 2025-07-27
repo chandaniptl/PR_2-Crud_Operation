@@ -1,0 +1,61 @@
+<%- include("partials/header") %>
+
+<!-- Background image with blur -->
+<style>
+  body {
+    background-image: url("/images/bg.jpg"); /* Make sure image exists in /public/images */
+    background-size: cover;
+    background-position: center;
+    filter: blur(0px);
+    backdrop-filter: blur(5px);
+  }
+
+  .main-content {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<div class="container my-5 main-content">
+  <h2 class="text-center mb-4 text-primary fw-bold">Employee List</h2>
+
+  <% if (employees.length === 0) { %>
+    <div class="alert alert-info text-center">No employees available. Please add some.</div>
+  <% } else { %>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover text-center align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Salary (₹)</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% employees.forEach(emp => { %>
+            <tr>
+              <td><%= emp.name %></td>
+              <td><%= emp.department %></td>
+              <td><%= emp.salary %></td>
+              <td>
+                <a href="/edit/<%= emp.id %>" class="btn btn-warning btn-sm me-1">
+                  <i class="bi bi-pencil-square"></i> Edit
+                </a>
+                <a href="/delete/<%= emp.id %>" class="btn btn-danger btn-sm me-1">
+                  <i class="bi bi-trash3-fill"></i> Delete
+                </a>
+                <a href="/task/<%= emp.id %>" class="btn btn-success btn-sm">
+                  <i class="bi bi-list-task"></i> Assign Task
+                </a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } %>
+</div>

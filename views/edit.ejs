@@ -1,0 +1,31 @@
+<%- include("partials/header") %>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+  <div class="card shadow-lg p-4" style="width: 100%; max-width: 500px; border-radius: 1rem; background: #ffffff;">
+    <div class="text-center mb-4">
+      <h3 class="fw-semibold text-black">Edit Employee</h3>
+      <p class="text-muted small">Update employee details below</p>
+    </div>
+
+      <form action="/emp/edit/<%= employee.id %>" method="POST">
+      <div class="form-group mb-3">
+        <label for="name" class="form-label fw-semibold">Employee Name</label>
+        <input type="text" name="name" id="name" value="<%= employee.name %>" required class="form-control rounded-pill">
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="department" class="form-label fw-semibold">Department</label>
+        <input type="text" name="department" id="department" value="<%= employee.department %>" required class="form-control rounded-pill">
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="salary" class="form-label fw-semibold">Salary</label>
+        <input type="number" name="salary" id="salary" value="<%= employee.salary %>" required class="form-control rounded-pill">
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-dark rounded-pill fw-bold">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

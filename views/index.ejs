@@ -1,0 +1,35 @@
+<%- include("partials/header") %>
+
+<div class="background-wrapper" style="position: relative; min-height: 100vh; background-image: url('https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=1470&q=80'); background-size: cover; background-position: center;">
+
+  <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh; backdrop-filter: blur(4px); background-color: rgba(0, 0, 0, 0.3);">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 500px; border-radius: 1rem; background: rgba(255, 255, 255, 0.85);">
+      <div class="text-center mb-4">
+        <h3 class="fw-semibold text-black">Add New Employee</h3>
+        <p class="text-muted small">Fill the details below to add a new employee</p>
+      </div>
+
+      <form action="/add" method="POST">
+        <div class="form-group mb-3">
+          <label for="name" class="form-label fw-semibold">Employee Name</label>
+          <input type="text" name="name" id="name" class="form-control rounded-pill" placeholder="e.g. John Doe" required>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="department" class="form-label fw-semibold">Department</label>
+          <input type="text" name="department" id="department" class="form-control rounded-pill" placeholder="e.g. HR" required>
+        </div>
+
+        <div class="form-group mb-4">
+          <label for="salary" class="form-label fw-semibold">Salary</label>
+          <input type="number" name="salary" id="salary" class="form-control rounded-pill" placeholder="e.g. 50000" required>
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-dark rounded-pill fw-bold">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
