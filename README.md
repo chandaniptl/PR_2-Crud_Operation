@@ -1,3 +1,14 @@
+<img width="1920" height="984" alt="emp1" src="https://github.com/user-attachments/assets/8df86387-fdbe-45fe-8fcf-d7a8f80cfe53" />
+
+<img width="1920" height="969" alt="emp2" src="https://github.com/user-attachments/assets/693721d0-41ff-440a-81b9-af3de23d4bca" />
+
+<img width="1920" height="955" alt="emp3" src="https://github.com/user-attachments/assets/b536ff5a-acd4-4fca-baa4-76e24a3d5514" />
+
+<img width="1920" height="964" alt="emp4" src="https://github.com/user-attachments/assets/f815b8c0-fea0-4987-a08c-ec3f3fdcc140" />
+
+<img width="1920" height="971" alt="emp5" src="https://github.com/user-attachments/assets/b031ecb3-b1d1-41a9-87f1-bfe2f8b8e310" />
+
+
 # Employee Management Dashboard - Project Documentation
 
 ## 🔧 Technologies Used
